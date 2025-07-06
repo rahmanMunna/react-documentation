@@ -39,6 +39,66 @@ function MyComponent() {
   );
 }
 ```
+## 🧠 2. Close All Tags
+
+JSX requires that **all tags be explicitly closed**, just like in XML.
+
+This applies to both standard HTML elements and custom components.
+
+### ❌ Incorrect:
+
+```jsx
+<img>
+<br>
+<input>
+```
+
+### ✅ Correct:
+```jsx
+<img />
+<br />
+<input />
+```
+
+## 🧠 3. Must use CamelCase:
+### ✅ Example:
+class -- ClassName
+onclick -- OnClick
+tabIndex -- TabIndex
+
+## 🧠 4.To insert JavaScript expressions (like variables, function calls, or expressions) inside JSX, wrap them in curly braces {}.
+You can use `{}` in:
+- **Props** (like `src`, `alt`, `href`, etc.)
+- 
+## ✅ Example:
+```jsx
+let avatar = "https://example.com/avatar.png";
+let description = "User profile picture";
+
+<img src={avatar} alt={description} />
+
+```
+## ✅ inline styles(CSS):
+```jsx
+const styles = {
+  color: "blue",
+  fontSize: "18px",
+};
+
+<p style={styles}>Styled text</p>
+```
+- or directly inline:
+```jsx
+<p style={{ color: "red", backgroundColor: "yellow" }}>
+  Inline styled text
+</p>
+```
+## ✅Conditional rendering
+```jsx
+const isLoggedIn = true;
+{isLoggedIn && <LogoutButton />}
+```
+
 
 
 
