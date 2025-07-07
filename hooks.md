@@ -11,20 +11,49 @@ import { useState } from "react";
 ```jsx
 const [state, setState] = useState(initialValue);
 ```  
--state: the current state value --> This is immutable
--setState: a function to update the state --> As a state variable is immutable,so to change state we must call the setState function and pass the updated value:
+### state: the current state value --> This is immutable
+### setState: a function to update the state --> As a state variable is immutable,so to change state we must call the setState function and pass the updated value:
 ## 🧠 Example:
 ```jsx
 const [count, setCount] = useState(0);
 ```
 ## ❌ Wrong:
 ```jsx
-count = count + 1;
+count = count + 1;  // ❌ Will not trigger re-render and breaks the state rules
 ```
 ## ✅ Correct:
 ```jsx
-setCount(count+1);
+setCount(count+1); // ✅ Proper way to update state
 ```
 
--initialValue: the value used on the first render:
-initial value can be any datatype.It can be an array,object,number,string.
+### 🧩 initialValue
+
+The `initialValue` is the value used by the state **on the first render** of the component.
+
+It can be **any data type**, such as:
+
+- `Number`
+- `String`
+- `Boolean`
+- `Array`
+- `Object`
+- `null` or `undefined`
+
+#### ✅ Examples:
+
+```jsx
+// Number
+const [count, setCount] = useState(0);
+
+// String
+const [name, setName] = useState("Munna");
+
+// Boolean
+const [isVisible, setIsVisible] = useState(true);
+
+// Array
+const [items, setItems] = useState([]);
+
+// Object
+const [user, setUser] = useState({ name: "", email: "" });
+```
