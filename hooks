@@ -1,0 +1,11 @@
+## useState
+The React useState Hook allows us to track state in a function component
+
+To use the useState Hook, we first need to import it into top of our component
+```jsx
+import { useState } from "react";
+```
+Syntax
+```jsx
+const [state, setState] = useState(initialValue);
+```  
