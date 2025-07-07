@@ -1,4 +1,4 @@
-### 🪝 1.useState Hooke
+### 🪝 `useState` Hooks
 The React useState Hook allows us to track state (**add and manage state**) in a function component.
 ---
 
