@@ -41,8 +41,9 @@ const MyComponent = () => {
 - You define a loader function in the route.
 - You want to avoid using useEffect for initial data fetching.
 - ***Mostly use when need to fetch data dynamically in dynamic route configuration***
-- ***When we use loader function, we need `useLoader()` hooks to get the data what loader function has returned***
-##🧪 Example :
+- ***When we use loader function, we need `useLoader()` hooks to get the data what loader function has returned***.
+  
+## 🧪 Example :
 ### Route Setup:
 ```jsx
 {
@@ -71,7 +72,7 @@ const User = () => {
 };
 ```
 
-### Component (`***UserDetails***`): 
+### Component (***`UserDetails`***): 
 ```jsx
 import { useLoaderData } from "react-router-dom";
 
