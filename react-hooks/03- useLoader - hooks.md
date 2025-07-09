@@ -47,8 +47,8 @@ const MyComponent = () => {
 ### Route Setup:
 ```jsx
 {
-  path: '/user/:id',
-  loader: async ({ params }) => {
+  path: '/user/:id', //we will get the value of id in params object
+  loader: async ({ params }) => {  // params is the object where we get the value of id properties
     const res = await fetch(`/api/user/${params.id}`);
     return res.json();
   },
