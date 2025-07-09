@@ -1,5 +1,6 @@
 ### 🪝 `useState` Hooks
 The React useState Hook allows us to track state (**add and manage state**) in a function component.
+## Use useState hooks instead of usnig normal variable, because when state changes, react re-render the application and ui will be updated as change made.
 ---
 
 Before using `useState`, you must import it on the top of the component from React:
