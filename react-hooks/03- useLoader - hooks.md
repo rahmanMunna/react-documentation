@@ -47,8 +47,8 @@ const MyComponent = () => {
 ### Route Setup:
 ```jsx
 {
-  path: '/user/:id', //we will get the value of id in params object
-  loader: async ({ params }) => {  // params is the object where we get the value of id properties
+  path: '/user/:id', //we will get the value of id in params object (asume id = '123')
+  loader: async ({ params }) => {  // params  =  👉 { id: '123' } -> is the object where we get the value of id properties
     const res = await fetch(`/api/user/${params.id}`);
     return res.json();
   },
@@ -64,7 +64,7 @@ const User = () => {
   
   return (
     <div>
-      <Link to = "users/${user.id}">
+      <Link to = "users/${user.id}"> // asume id = 123
           <button>Show Users Details</button>
       </Link>
     </div>
