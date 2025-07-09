@@ -7,7 +7,7 @@
 🔧 What is a loader?
 - A loader is a function you define in your route configuration.
 - It runs before the component is rendered, allowing you to load data ahead of time.
-```
+```jsx
 {
   path: '/example',
   loader: () => {
@@ -18,7 +18,7 @@
 
 ```
 
-```
+```jsx
 import { useLoaderData } from "react-router-dom";
 
 const MyComponent = () => {
