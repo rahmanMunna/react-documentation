@@ -27,72 +27,63 @@ const MyComponent = () => {
 };
 
 ```
+## 🎯 Purpose of useLoaderData()
+- To access data loaded by the loader function.
+- Helps with data `***fetching before render***` (unlike ***useEffect which runs after render***).
+- Improves performance and user experience (faster initial render).
+  
+❓ Why Use It?
+- No need for useEffect + useState for data fetching.
+- Centralizes data fetching logic in route configuration.
 
-📥 Purpose of `useLoader()`
-- We can extract the parameter from a request link by using `useParams hook`
-
----
-🛠 How useParams() Works
-- It returns an `object` containing the URL parameters defined in your route path.
-
----
-🎯 Purpose of useParams():
-- `Access dynamic segments` of the URL inside a component.
-### ✅ Examples:
-
-- URL : /products/id=1&&name=abc
-- define dynamic route : 
-- path : '/products/:id'
-- <Route path="/products/:id" element={<ProductDetails />} />
-- Here, :id is the dynamic segment of the route.
-# Now we can extract ('id=1&&name=abc') from the url using `useParams hooks`
----
-
-### ✅ Code:
+🕒 When to Use It?
+- You need to fetch data before the component loads.
+- You define a loader function in the route.
+- You want to avoid using useEffect for initial data fetching.
+- ***Mostly use when need to fetch data dynamically in dynamic route configuration***
+- ***When we use loader function, we need `useLoader()` hooks to get the data what loader function has returned***
+##🧪 Example :
+### Route Setup:
 ```jsx
-import { useParams } from "react-router-dom";
-
-//URL : /products/id=1&&name=abc
-//path : '/products/:id'
-
-const parametersObj = useParams();
-// parametersObj = {id : 'id=1&&name=abc'} // here we have id properties,bcz we define (/:id) in route path.
-const parameters = parametersObj.id;
-
-```
-- If your route is /products/:id, then useParams() will return { id: '...' }.
-- It only extracts path parameters, not query strings (?key=value). For that, use useSearchParams().
----
-
-## ✅ Here is an full example use of using `useParams` hooks` :
-
-### - Define a dynamic route in `Routes.jsx`
-```Routes.jsx
 {
-  path: '/drinks/:id',
-  element:<Show_Drinks_Details></Show_Drinks_Details>
-},
-```
-### - Create a button to navigate to the route dynamically - in `Drinks.jsx`
-```Drink.jsx
-<Link to={`/drinks/${drink.id}`}> //asume drink is an object ,id = 2
-  <button>Show Details</button> 
-</Link>
-```
-### - In `Show_Drinks_Details.jsx` use useParams() hooks to access the parameters in the URL.
-```Show_Drinks_Details.jsx
-import { useParams } from "react-router-dom";
+  path: '/user/:id',
+  loader: async ({ params }) => {
+    const res = await fetch(`/api/user/${params.id}`);
+    return res.json();
+  },
+  element: <UserDetails />
+}
 
-const Show_Drinks_Details = () => {
-    const paramObj = useParams(); // {id : '2'} 
-    const drinkId = paramObj.id;
-    return (
-      //code  
-    );
+```
+
+### Make a button to navigate and load the data ***`Users Component`***
+
+```jsx
+const User = () => {
+  
+  return (
+    <div>
+      <Link to = "users/${user.id}">
+          <button>Show Users Details</button>
+      </Link>
+    </div>
+  );
 };
-
-export default Show_Drinks_Details;
 ```
 
+### Component (`***UserDetails***`): 
+```jsx
+import { useLoaderData } from "react-router-dom";
+
+const UserDetails = () => {
+  const user = useLoaderData();
+  return (
+    <div>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+    </div>
+  );
+};
+```
 
 
