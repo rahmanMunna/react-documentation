@@ -39,7 +39,7 @@ const MyProvider = ({ children }) => {
   const [value, setValue] = useState("Hello World");
 
   return (
-    <MyContext.Provider value={{ value, setValue }}>
+    <MyContext.Provider value={{ value, setValue }}> // we can any type of data - > an array,string ,object,function
       {children}
     </MyContext.Provider>
   );
@@ -67,6 +67,28 @@ const MyComponent = () => {
     </div>
   );
 };
+```
+
+## Provide multiple value : 
+```jsx
+import { useState } from "react";
+import { AppContext } from "./AppContext";
+
+const AppProvider = ({ children }) => {
+  const [user, setUser] = useState({ name: "Munna", age: 22 });
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
+  return (
+    <AppContext.Provider value={{ user, setUser, isLoggedIn, setIsLoggedIn, theme, toggleTheme }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+export default AppProvider;
 ```
 
 # 🕒 When to Use Context API?
@@ -99,4 +121,13 @@ createRoot(document.getElementById('root')).render(
     </MyContext.Provider>
   </React.StrictMode>
 )
+```
+
+## Consume Context API data from ant child component : 
+
+```jsx
+import { useContext } from "react";
+import { MyContext } from "MyContextProvider";
+
+const data = useContext(MyContext); // { name: "Context API" }
 ```
