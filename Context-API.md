@@ -24,33 +24,29 @@
 ### Step 1: Create the Context:
 
 ```jsx
-import { createContext } from 'react';
-
-const MyContext = createContext();
-```
-
-### Step 2: Provide the Context (Wrap Your App) : 
-```jsx
-import React, { useState } from 'react';
+import { createContext } from "react";
 
 const MyContext = createContext();
 
-const MyProvider = ({ children }) => {
-  const [value, setValue] = useState("Hello World");
-
-  return (
-    <MyContext.Provider value={{ value, setValue }}> // we can any type of data - > an array,string ,object,function
-      {children}
-    </MyContext.Provider>
-  );
+const MyContextProvider = ({children}) => {
+    return (
+        <MyContext.Provider value={{ name: "Context API" }}>
+            {children}
+        </MyContext.Provider>   
+    );
 };
+
+export { MyContextProvider, MyContext };
 ```
+
 ## In your main app : 
 
 ```jsx
-<MyProvider>
-  <App />
-</MyProvider>
+<React.StrictMode>
+    <MyContextProvider>
+      <App />
+    </MyContextProvider>
+</React.StrictMode>
 ```
 
 ## Step 3: Consume the Context (Any Child Component) : 
@@ -58,12 +54,11 @@ const MyProvider = ({ children }) => {
 import { useContext } from 'react';
 
 const MyComponent = () => {
-  const { value, setValue } = useContext(MyContext);
+  const value = useContext(MyContext); // {name : 'Conetx API'}
 
   return (
     <div>
       <p>{value}</p>
-      <button onClick={() => setValue("Updated!")}>Change</button>
     </div>
   );
 };
