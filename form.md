@@ -80,7 +80,7 @@ const  formData.get("password")
 ```jsx
 const formData = new FormData(formElement);
 ```
-- **It automatically grabs all the <input>, <select>, <textarea>, etc., from the `form` that have a `name attribute`**
+## **It automatically grabs all the <input>, <select>, <textarea>, etc., from the `form` that have a `name attribute`**
 ```html
 <form id="myForm">
   <input name="username" value="Munna" />
