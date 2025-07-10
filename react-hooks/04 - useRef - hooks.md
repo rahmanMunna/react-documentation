@@ -4,6 +4,7 @@
 - That object has a `.current` property which you can use to:
   - Reference a DOM element
   - Store any mutable value that does not trigger a re-render
+  - persist values between renders without causing re-renders.
 ### 📌 Syntax : 
 ```jsx
 const ref = useRef(initialValue);
