@@ -4,6 +4,10 @@
 - That object has a `.current` property which you can use to:
   - Reference a DOM element
   - Store any mutable value that does not trigger a re-render
+### 📌 Syntax : 
+```jsx
+const ref = useRef(initialValue);
+``` 
 
 ## Example : 
 ```jsx
@@ -13,7 +17,7 @@
 ```jsx
 const nameElement = document.getElementById('name');
 ```
-- We can do the same thing using `useRef()` hook :
+## 🎯 We can do the same thing using `useRef()` hook :
 ### 1. Fristly Create the refernce object using `useRef()` hook : 
 ```jsx
 const nameRef = useRef();
@@ -28,29 +32,31 @@ const nameRef = useRef();
 ```jsx
 nameRef.current // <input  type="text" name="name" id="name" />
 ```
+### Here is the complete Example : 
 
-### 📌 Syntax : 
-```jsx
-const ref = useRef(initialValue);
-```
-# 🛠 How to Use useRef
-## ✅ 1. Referencing a DOM Element (like `document.getElementById()`).
 ```jsx
 import { useRef } from "react";
 
-function MyComponent() {
-  const inputRef = useRef();
+function MyForm() {
+  const nameRef = useRef();
 
-  const focusInput = () => {
-    inputRef.current.focus(); // access DOM element
-    inputRef.current.value; // get the value of the input field 
+  const handleClick = () => {
+    console.log(nameRef.current);       // 👉 full <input> element
+    console.log(nameRef.current.value); // 👉 current input value
+    nameRef.current.focus();            // 👉 focus the input
   };
 
   return (
     <>
-      <input ref={inputRef} type="text" placeholder="Type here..." />
-      <button onClick={focusInput}>Focus Input</button>
+      <input type="text" ref={nameRef} />
+      <button onClick={handleClick}>Log Input</button>
     </>
   );
 }
 ```
+
+## ❌ Don't Use useRef For:
+- Triggering UI updates (use useState instead).
+- Replacing state that should cause a re-render.
+
+# Renders on change?	❌ No
