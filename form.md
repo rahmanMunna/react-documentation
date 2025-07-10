@@ -81,14 +81,14 @@ const  formData.get("password")
 const formData = new FormData(formElement);
 ```
 ## It automatically grabs all the <input>, <select>, <textarea>, etc., from the `form` that have a `name attribute`.
-```html
+```jsx
 <form id="myForm">
   <input name="username" value="Munna" />
   <input name="email" value="munna@email.com" />
 </form>
 
 ```
-```js
+```jsx
 const form = document.getElementById("myForm");
 const formData = new FormData(form);
 
@@ -97,14 +97,15 @@ console.log(formData.get("email"));    // "munna@email.com"
 ```
 
 ### if we use submit button then event(e) objec will be generated. From e object we can get the e.target as the form element.
+
 ```jsx
 //e.target = <form>..</form>
 //const form = document.getElementById("myForm");
 //both are same
 ```
 
-- So we can pass the e.target as the constructor of `formData class`
-- Then create an object of FormData class (`new FormData(e.target)`) and assign the reference to a variable
+- So we can pass the e.target as the constructor of `formData class`.
+- Then create an object of FormData class (`new FormData(e.target)`) and assign the reference to a variable.
 ```jsx
 const formData = new FormData(e.target); // formData is the instance 
 ```
