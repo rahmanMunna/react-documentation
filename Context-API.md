@@ -75,3 +75,28 @@ const MyComponent = () => {
 - The same data is needed by many components at different levels.
 
 ## **🔴 Don’t use Context for every state. Use it for global/shared state, not local UI state.**
+
+# Using with react - router
+
+- in main.jsx :
+```jsx
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { MyContext } from 'MyContextProvider.jsx';
+
+//define routes
+const router = createBrowserRouter([
+  {
+    path : '/',
+    element : <Component></Component>
+  }
+])
+
+
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <MyContext.Provider value={{ name: "Context API" }}>
+      <RouterProvider router={router} />
+    </MyContext.Provider>
+  </React.StrictMode>
+)
+```
