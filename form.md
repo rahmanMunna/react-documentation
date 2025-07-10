@@ -131,3 +131,19 @@ formData.forEach((value, key) => {
 //email: munna@email.com
 ```
 
+## Way -3 (`using useRef hook`) :
+- Cretae reference using useRef hook : 
+```jsx
+const nameRef = useRef();
+const emailRef = useRef();
+```
+- Attach as the reference to the input fields.(use ref attribute in html tag) :
+```jsx
+<input ref={nameRef} type="text" name="name" id="name" />t>
+<input ref={emailRef} type="email" name="email" id="email" />t>
+```
+
+- Accees Vlaue using `current.value` :
+```jsx
+const name = nameRef.current.value;
+const email = emailRef.current.value;
