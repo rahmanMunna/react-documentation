@@ -60,3 +60,20 @@ function MyForm() {
 - Replacing state that should cause a re-render.
 
 # Renders on change?	❌ No
+## ✅Example : 
+### Storing a Mutable Value (not for rendering) : 
+```jsx
+function Timer() {
+  const countRef = useRef(0);
+
+  const increment = () => {
+    countRef.current += 1;
+    console.log("Count:", countRef.current);
+  };
+
+  return <button onClick={increment}>Click Me</button>;
+}
+```
+## **`The value is preserved between renders but won't trigger re-render when updated.`**
+
+
