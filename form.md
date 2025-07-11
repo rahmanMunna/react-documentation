@@ -55,6 +55,7 @@
 
 # 🛠 Access the form value : 
 ## Way -1 (`Using event object`)
+- Use `**e.preventDefault()**` to not to reload the page after submission.
 
 ```jsx
 const form = e.target; // e.target is the form element
