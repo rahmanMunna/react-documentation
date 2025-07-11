@@ -1,18 +1,22 @@
-## Import `initializeApp` function from firebase : 
+## Step - 1 : Import `initializeApp` function from firebase : 
 ```jsx
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 ```
-## Create an app using getAuth function by passing you `firbaseConfig object` :
+## Step - 2 : Create an app using getAuth function by passing you `firbaseConfig object` :
 ```jsx
 const app = initializeApp(firebaseConfig);
 ```
-## import getAuth :
+## Step - 3 : import getAuth :
 ```jsx
 import { getAuth } from "firebase/auth";
 ```
-## Create an auth using getAuth by passing app : 
+## Step - 4 : Create an auth using getAuth by passing app : 
 ```jsx
 const auth = getAuth(app);
 ```
-## Export the auth
+## Step - 5 : `Export the auth` ,because we need it in every api call :
+```jsx
+export default auth;
+```
+# Import the `auth` where you call the api and pass the auth .
