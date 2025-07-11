@@ -1,3 +1,4 @@
+# Installation and Setup
 - Go to console.firebase.google.com
 - create a project
 - click get started
