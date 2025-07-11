@@ -1,4 +1,4 @@
-# 🔗 <NavLink> 
+# 🔗 `<NavLink>` 
 - Active Route Styling in React Router.
 ---
 
