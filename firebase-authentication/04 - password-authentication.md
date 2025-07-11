@@ -35,8 +35,11 @@ createUserWithEmailAndPassword(auth, email, password)
 ## ✅ .then((userCredential) => { ... }) :
 - serCredential contains details like:
   - userCredential.user → user info object (UID, email, etc.)
+---
 ## ❌ .catch((error) => { ... })
 - Runs if there's an error during signup (e.g., weak password, email already in use).
+---
+## Summary : 
 
 | Part                             | Purpose                           |
 | -------------------------------- | --------------------------------- |
