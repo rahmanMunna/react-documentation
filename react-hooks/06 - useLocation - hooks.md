@@ -30,6 +30,8 @@ const CurrentPage = () => {
   );
 };
 ```
+## 📦 What location Object Contains: 
+
 | Property   | Description                             |
 | ---------- | --------------------------------------- |
 | `pathname` | Path of the current URL (`/products/5`) |
@@ -37,3 +39,30 @@ const CurrentPage = () => {
 | `hash`     | Hash string (`#section1`)               |
 | `state`    | Optional state passed via navigation    |
 | `key`      | Unique location key (used internally)   |
+
+## 🧪 Example : 
+- If you navigated using:
+```jsx
+navigate("/profile?tab=info#bio", {
+  state: { username: "munna" },
+});
+```
+- Then useLocation() would return:
+```jsx
+{
+  pathname: "/profile",
+  search: "?tab=info",
+  hash: "#bio",
+  state: { username: "munna" },
+  key: "abc123"
+}
+```
+## 🕒 When to Use
+
+| Use Case                             | Why It’s Useful                                 |
+| ------------------------------------ | ----------------------------------------------- |
+| Read query strings                   | `location.search`                               |
+| Access route state (from `navigate`) | `location.state`                                |
+| Conditionally render based on route  | Check `location.pathname`                       |
+| Track route changes (analytics, etc) | Use in `useEffect()` with `location` dependency |
+
