@@ -24,7 +24,7 @@ const nameElement = document.getElementById('name');
 const nameRef = useRef();
 ```
 
-### 2. Then Attach the reference object to the html element (useing `ref` attribute) : 
+### 2. Then Attach the reference object to the html element (using `ref` attribute) : 
 ```jsx
 <input ref={nameRef}  type="text" name="name" id="name" />
 ```
