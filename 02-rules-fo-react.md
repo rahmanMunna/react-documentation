@@ -41,9 +41,9 @@ function MyComponent() {
 ```
 ## 🧠 2. Close All Tags
 
-JSX requires that **all tags be explicitly closed**, just like in XML.
+- JSX requires that **all tags be `explicitly closed`**, just like in XML.
 
-This applies to both standard HTML elements and custom components.
+- This applies to both standard HTML elements and custom components.
 
 ### ❌ Incorrect:
 
@@ -60,7 +60,7 @@ This applies to both standard HTML elements and custom components.
 <input />
 ```
 
-## 🧠 3. Must use CamelCase:
+## 🧠 3. Must use `Pascal case`:
 ### ✅ Example:
 class -- ClassName
 onclick -- OnClick
