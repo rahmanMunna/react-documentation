@@ -14,7 +14,7 @@ return {
 }
 
 ```
--To return multiple elements from a compoent,wrap them with a single parent tag,then return the parent tag
+-To `return multiple elements` from a compoent,`wrap` them `with a single parent` tag,then `return the parent tag`
 
 ✅ **Correct Example:**
 
