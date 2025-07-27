@@ -1,7 +1,7 @@
 ### 🪝 `useLoader` Hooks
 📌 What is `useLoader()`?
 - used inside a route component.
-- It gives you access to the data returned from the route's loader function.
+- It gives you access to the data `returned` from the route's `loader` function.
 
 ---
 🔧 What is a loader?
