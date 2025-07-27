@@ -62,14 +62,13 @@ function MyComponent() {
 
 ## 🧠 3. Must use `Pascal case`:
 ### ✅ Example:
-class -- ClassName
-onclick -- OnClick
-tabIndex -- TabIndex
+- class -- ClassName
+- onclick -- OnClick
+- tabIndex -- TabIndex
 
 ## 🧠 4.To insert JavaScript expressions (like variables, function calls, or expressions) inside JSX, wrap them in curly braces {}.
 You can use `{}` in:
 - **Props** (like `src`, `alt`, `href`, etc.)
-- 
 ## ✅ Example:
 ```jsx
 let avatar = "https://example.com/avatar.png";
