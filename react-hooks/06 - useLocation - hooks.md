@@ -3,7 +3,7 @@
 
 ## 📌 What is useLocation() : 
 - useLocation() is a React Router hook that gives you access to the `current location object.`
-- This object represents the current URL and contains helpful information like pathname, search, hash, and state.
+- This object represents the `current URL` and contains helpful information like pathname, search, hash, and state.
 
 ## 🧠 Why Use useLocation() : 
 - Read the current path `(pathname)`
