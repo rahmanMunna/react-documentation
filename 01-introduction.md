@@ -2,7 +2,7 @@
 
 ## What is React?
 
-React is a **front-end JavaScript library** for building **user interfaces**, particularly for single-page applications (SPAs). It was developed and is maintained by **Meta (formerly Facebook)**.
+React is a **front-end JavaScript library** for building **user interfaces**, particularly for single-page applications `(SPAs)`. It was developed and is maintained by **Meta (formerly Facebook)**.
 
 React allows developers to create large web applications that can update and `render` efficiently `in response` `to changing data` — `without reloading the page.`
 
