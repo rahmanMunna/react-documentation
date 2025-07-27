@@ -4,7 +4,7 @@
 
 React is a **front-end JavaScript library** for building **user interfaces**, particularly for single-page applications (SPAs). It was developed and is maintained by **Meta (formerly Facebook)**.
 
-React allows developers to create large web applications that can update and render efficiently in response to changing data — without reloading the page.
+React allows developers to create large web applications that can update and `render` efficiently `in response` `to changing data` — `without reloading the page.`
 
 One of React’s core features is the ability to **write HTML-like code inside JavaScript files** using a syntax called **JSX (JavaScript XML)**. This enables us to write UI components that contain both structure and logic.
 
