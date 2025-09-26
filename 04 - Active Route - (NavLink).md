@@ -49,3 +49,14 @@ nav a.active{
 ## 💡 What is isActive?
 - It’s a boolean provided by React Router to tell if the current link matches the route.
 - It allows conditional styling for the active route.
+
+
+## ✅ Example of Generalize Style :
+```
+ const linkClasses = ({ isActive }) =>
+        `transition hover:text-yellow-300 ${isActive ? "border-b-2 border-green-500 text-black" : "text-white"}`;
+<NavLink to="/customerDashboard" className={linkClasses}>Shop</NavLink>
+<NavLink to="/deals" className={linkClasses}>Deals</NavLink>
+<NavLink to="/about" className={linkClasses}>About</NavLink>
+<NavLink to="/contact" className={linkClasses}>Contact</NavLink>       
+```
